@@ -1,0 +1,73 @@
+<html>
+ <head>
+  <title>Image Encryption</title>
+  <link href="encryption.css" type="text/css" rel="stylesheet" >
+  <script type="text/javascript">
+
+    function PreviewImage() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+        };
+    };
+
+</script>
+  </head>
+ <body>
+  <div id="wrapper">
+  
+	
+	 <div id="header">
+		<img src="images/menu-bg.png" width="100%" height="30%"/>
+		<h3 style="font-family:'Arial Black'; font-weight:900; margin-top:-10%; margin-left:35%; color:pink; font-size:250%;">IMAGE ENCRYPTION</h3>
+				
+	</div>
+	 <div id="leftnav">
+	<marquee direction="down" behavior="scroll" loop="infinite" scrolldelay="10" height="120%"> 
+	<ul style="list-style:none">
+
+	<li> <img src="images/conf1.jpg" width="13%" height="40%"/><a href="#"></a></li><br/>
+	<li> <img src="images/conf2.jpg" width="13%" height="40%"/><a href="#"></a></li><br/>
+	<li> <img src="images/conf3.jpg" width="13%" height="40%"/><a href="#"></a></li><br/>
+	<li> <img src="images/conf4.jpg" width="13%" height="40%"/><a href="#"></a></li><br/>
+
+	</ul> 
+	</marquee>
+
+	 </div>
+
+	 <div id="rightnav">
+	<marquee direction="down" behavior="scroll" loop="infinite" scrolldelay="10" height="58%"> 
+	<ul style="list-style:none">
+
+	<li> <img src="images/conf5.jpg" width="55%" height="50%"/><a href="#"></a></li><br/>
+	<li> <img src="images/conf6.jpg" width="55%" height="50%"/><a href="#"></a></li><br/>
+	<li> <img src="images/conf7.jpg" width="55%" height="50%"/><a href="#"></a></li><br/>
+	<li> <img src="images/conf8.jpg" width="55%" height="50%"/><a href="#"></a></li><br/>
+	
+	</ul> 
+	</marquee>
+
+	 </div>
+
+	 <div id="body">
+	 <p style="font-family:'Arail Black'; font-size:150% ">This site helps you to encrypt your confidential images before sending them through internet.</p>
+	 <p style="font-family:'Arail Black'; font-size:150%; margin-left: 20%">Select the image you wish to encrypt</p>
+	 <form action="select1.php" method="post" enctype="multipart/form-data">
+
+			<input id="uploadImage" type="file" name="uploadFile" onchange="PreviewImage();" style="margin-left:20%; margin-top:0%"/>
+			<input type="hidden" name="MAX_FILE_SIZE" value="25000" />
+		    <img id="uploadPreview" style=" border:0 width: 100px; height: 100px;" />
+			<input type="submit" value="Upload File" style="margin-left:0%; margin-top:0%">
+	</form>
+</div>
+
+	 <div id="footer">
+	<p> © Copyrights reserved </p>
+	 </div>
+
+</div>
+ </body>
+</html>
